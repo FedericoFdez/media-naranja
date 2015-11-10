@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     @IBAction func nacimientoSeleccionado(segue: UIStoryboardSegue) {
         
         if let vc = segue.sourceViewController as? NacimientoViewController {
-            fechaNacimiento.text = String(vc.fechaNacimiento.date)
+            fechaNacimiento.text = String(vc.fechaNacimiento)
         }
     }
     
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     @IBAction func enamoramientoSeleccionado(segue: UIStoryboardSegue) {
         
         if let vc = segue.sourceViewController as? EnamoramientoViewController {
-            fechaEnamoramiento.text = String(vc.fechaEnamoramiento.date)
+            fechaEnamoramiento.text = String(vc.fechaEnamoramiento)
         }
     }
 

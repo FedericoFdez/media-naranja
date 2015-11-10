@@ -10,7 +10,7 @@ import UIKit
 
 class EnamoramientoViewController: UIViewController {
 
-    @IBOutlet weak var fechaEnamoramiento: UIDatePicker!
+    var fechaEnamoramiento : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,13 @@ class EnamoramientoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func fechaCambiada(sender: UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let strDate = dateFormatter.stringFromDate(sender.date)
+        self.fechaEnamoramiento = strDate
+
+    }
 
     /*
     // MARK: - Navigation

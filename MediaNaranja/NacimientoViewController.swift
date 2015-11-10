@@ -9,8 +9,8 @@
 import UIKit
 
 class NacimientoViewController: UIViewController {
-
-    @IBOutlet weak var fechaNacimiento: UIDatePicker!
+    
+    var fechaNacimiento : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,14 @@ class NacimientoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func fechaCambiada(sender: UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let strDate = dateFormatter.stringFromDate(sender.date)
+        self.fechaNacimiento = strDate
     }
 
     /*
