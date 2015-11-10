@@ -19,7 +19,8 @@ class NacimientoViewController: UIViewController {
 
         if fechaNacimiento != "" {
           let df = NSDateFormatter()
-            df.dateFormat = "dd MM yyyy"
+            df.dateFormat = "dd MMMM yyyy"
+            df.locale = NSLocale(localeIdentifier: "es-ES")
             let date = df.dateFromString(self.fechaNacimiento)
             if let unwrappedDate = date {
                 nacimientoDatePicker.setDate(unwrappedDate, animated: true)
@@ -35,7 +36,8 @@ class NacimientoViewController: UIViewController {
     
     @IBAction func fechaCambiada(sender: UIDatePicker) {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd MM yyyy"
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        dateFormatter.locale = NSLocale(localeIdentifier: "es-ES")
         let strDate = dateFormatter.stringFromDate(sender.date)
         self.fechaNacimiento = strDate
 

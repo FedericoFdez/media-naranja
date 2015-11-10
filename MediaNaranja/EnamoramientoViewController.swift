@@ -18,7 +18,8 @@ class EnamoramientoViewController: UIViewController {
 
         if fechaEnamoramiento != "" {
             let df = NSDateFormatter()
-            df.dateFormat = "dd MM yyyy"
+            df.dateFormat = "dd MMMM yyyy"
+            df.locale = NSLocale(localeIdentifier: "es-ES")
             let date = df.dateFromString(self.fechaEnamoramiento)
             if let unwrappedDate = date {
                 enamoramientoDatePicker.setDate(unwrappedDate, animated: true)
@@ -33,7 +34,8 @@ class EnamoramientoViewController: UIViewController {
     
     @IBAction func fechaCambiada(sender: UIDatePicker) {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd MM yyyy"
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        dateFormatter.locale = NSLocale(localeIdentifier: "es-ES")
         let strDate = dateFormatter.stringFromDate(sender.date)
         self.fechaEnamoramiento = strDate
 

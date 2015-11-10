@@ -129,6 +129,7 @@
                                 <date key="date" timeIntervalSinceReferenceDate="468839996.64797002">
                                     <!--2015-11-10 09:19:56 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="es"/>
                                 <connections>
                                     <action selector="fechaCambiada:" destination="hGy-XG-PGd" eventType="valueChanged" id="4ch-fa-EO4"/>
                                 </connections>
@@ -194,6 +195,7 @@
                                 <date key="date" timeIntervalSinceReferenceDate="468840986.64055699">
                                     <!--2015-11-10 09:36:26 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="es"/>
                                 <connections>
                                     <action selector="fechaCambiada:" destination="aMq-oU-8dy" eventType="valueChanged" id="Byh-6U-riY"/>
                                 </connections>
