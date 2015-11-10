@@ -11,11 +11,19 @@ import UIKit
 class EnamoramientoViewController: UIViewController {
 
     var fechaEnamoramiento : String = ""
-    
+    @IBOutlet weak var enamoramientoDatePicker: UIDatePicker!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if fechaEnamoramiento != "" {
+            let df = NSDateFormatter()
+            df.dateFormat = "dd MM yyyy"
+            let date = df.dateFromString(self.fechaEnamoramiento)
+            if let unwrappedDate = date {
+                enamoramientoDatePicker.setDate(unwrappedDate, animated: true)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +33,7 @@ class EnamoramientoViewController: UIViewController {
     
     @IBAction func fechaCambiada(sender: UIDatePicker) {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "dd MM yyyy"
         let strDate = dateFormatter.stringFromDate(sender.date)
         self.fechaEnamoramiento = strDate
 

@@ -24,6 +24,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "Seleccionar Nacimiento":
+                if let vc = segue.destinationViewController as? NacimientoViewController {
+                    vc.fechaNacimiento = fechaNacimiento.text!
+                }
+            case "Seleccionar Enamoramiento":
+                if let vc = segue.destinationViewController as? EnamoramientoViewController {
+                    vc.fechaEnamoramiento = fechaNacimiento.text!
+                }
+            default:
+                break
+            }
+        }
+    }
+    
     // MARK: Fecha de nacimiento - unwind
     
     @IBAction func nacimientoSeleccionado(segue: UIStoryboardSegue) {
