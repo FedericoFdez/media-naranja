@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var fechaNacimiento: UILabel!
+    @IBOutlet weak var fechaEnamoramiento: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +22,24 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Fecha de nacimiento - unwind
+    
+    @IBAction func nacimientoSeleccionado(segue: UIStoryboardSegue) {
+        
+        if let vc = segue.sourceViewController as? NacimientoViewController {
+            fechaNacimiento.text = String(vc.fechaNacimiento.date)
+        }
+    }
+    
+    // MARK: Fecha de enamoramiento - unwind
+    
+    @IBAction func enamoramientoSeleccionado(segue: UIStoryboardSegue) {
+        
+        if let vc = segue.sourceViewController as? EnamoramientoViewController {
+            fechaEnamoramiento.text = String(vc.fechaEnamoramiento.date)
+        }
     }
 
 

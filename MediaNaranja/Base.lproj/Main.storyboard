@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,14 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlm-eP-HmV">
-                                <rect key="frame" x="239" y="121" width="122" height="30"/>
-                                <animations/>
-                                <state key="normal" title="¿Cuándo naciste?"/>
-                                <connections>
-                                    <segue destination="hGy-XG-PGd" kind="presentation" id="0dS-He-rcR"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6Q-uA-ldI">
                                 <rect key="frame" x="209" y="213" width="182" height="30"/>
                                 <animations/>
@@ -51,26 +43,56 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlm-eP-HmV">
+                                <rect key="frame" x="239" y="121" width="122" height="30"/>
+                                <animations/>
+                                <state key="normal" title="¿Cuándo naciste?"/>
+                                <connections>
+                                    <segue destination="hGy-XG-PGd" kind="presentation" id="0dS-He-rcR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQS-SM-zqj">
+                                <rect key="frame" x="211" y="159" width="179" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vc3-aG-jJY">
+                                <rect key="frame" x="211" y="251" width="179" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1rV-ha-kDJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1En-eh-nRX"/>
                             <constraint firstItem="1rV-ha-kDJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="5nN-cR-BQ1"/>
+                            <constraint firstItem="dQS-SM-zqj" firstAttribute="top" secondItem="jlm-eP-HmV" secondAttribute="bottom" constant="8" id="Fp9-6g-SGj"/>
                             <constraint firstItem="B6Q-uA-ldI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JLh-jT-0FU"/>
+                            <constraint firstItem="dQS-SM-zqj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Txi-os-nzf"/>
                             <constraint firstItem="B6Q-uA-ldI" firstAttribute="top" secondItem="jlm-eP-HmV" secondAttribute="bottom" constant="62" id="UeE-LL-qzk"/>
+                            <constraint firstItem="vc3-aG-jJY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ptv-hM-CEI"/>
                             <constraint firstItem="jlm-eP-HmV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tgu-aD-RLZ"/>
                             <constraint firstItem="jlm-eP-HmV" firstAttribute="top" secondItem="1rV-ha-kDJ" secondAttribute="bottom" constant="72" id="wIs-O7-c2L"/>
+                            <constraint firstItem="vc3-aG-jJY" firstAttribute="top" secondItem="B6Q-uA-ldI" secondAttribute="bottom" constant="8" id="yIM-a7-r49"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fechaEnamoramiento" destination="vc3-aG-jJY" id="vG6-fx-pem"/>
+                        <outlet property="fechaNacimiento" destination="dQS-SM-zqj" id="tlT-OT-HVp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Nacimiento View Controller-->
         <scene sceneID="CIw-2Q-fHW">
             <objects>
-                <viewController id="hGy-XG-PGd" sceneMemberID="viewController">
+                <viewController id="hGy-XG-PGd" customClass="NacimientoViewController" customModule="MediaNaranja" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AJE-wz-K4S"/>
                         <viewControllerLayoutGuide type="bottom" id="Fx6-mx-uW4"/>
@@ -93,23 +115,46 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZdQ-6I-grS">
+                                <rect key="frame" x="140" y="81" width="320" height="216"/>
+                                <animations/>
+                                <date key="date" timeIntervalSinceReferenceDate="468839996.64797002">
+                                    <!--2015-11-10 09:19:56 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sU-aB-VLh">
+                                <rect key="frame" x="273" y="364" width="55" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Este día"/>
+                                <connections>
+                                    <segue destination="QZj-nf-kgM" kind="unwind" unwindAction="nacimientoSeleccionado:" id="BxJ-o7-8Ug"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Pg5-zu-ILs" firstAttribute="centerX" secondItem="7dU-Of-eX2" secondAttribute="centerX" id="M1s-CL-sPn"/>
+                            <constraint firstItem="ZdQ-6I-grS" firstAttribute="centerX" secondItem="7dU-Of-eX2" secondAttribute="centerX" id="OVH-N7-qfF"/>
                             <constraint firstItem="Pg5-zu-ILs" firstAttribute="top" secondItem="AJE-wz-K4S" secondAttribute="bottom" constant="8" id="axv-Yh-nFz"/>
+                            <constraint firstItem="ZdQ-6I-grS" firstAttribute="top" secondItem="Pg5-zu-ILs" secondAttribute="bottom" constant="33" id="cee-HI-8kB"/>
+                            <constraint firstItem="0sU-aB-VLh" firstAttribute="top" secondItem="ZdQ-6I-grS" secondAttribute="bottom" constant="67" id="edX-xv-iKb"/>
+                            <constraint firstItem="0sU-aB-VLh" firstAttribute="centerX" secondItem="7dU-Of-eX2" secondAttribute="centerX" id="xE9-Um-zpD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fechaNacimiento" destination="ZdQ-6I-grS" id="qnw-Oj-D31"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mz2-cS-aQy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QZj-nf-kgM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1003" y="-47"/>
+            <point key="canvasLocation" x="1262" y="-46"/>
         </scene>
-        <!--View Controller-->
+        <!--Enamoramiento View Controller-->
         <scene sceneID="pOd-dE-14v">
             <objects>
-                <viewController id="aMq-oU-8dy" sceneMemberID="viewController">
+                <viewController id="aMq-oU-8dy" customClass="EnamoramientoViewController" customModule="MediaNaranja" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j6U-Lk-q2b"/>
                         <viewControllerLayoutGuide type="bottom" id="FCx-ME-DYL"/>
@@ -132,18 +177,41 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vS-84-daW">
+                                <rect key="frame" x="277" y="364" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Tal día como este"/>
+                                <connections>
+                                    <segue destination="3mN-SH-4LM" kind="unwind" unwindAction="enamoramientoSeleccionado:" id="Ega-my-LZc"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="iLy-70-LOi">
+                                <rect key="frame" x="140" y="81" width="320" height="216"/>
+                                <animations/>
+                                <date key="date" timeIntervalSinceReferenceDate="468840986.64055699">
+                                    <!--2015-11-10 09:36:26 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2vS-84-daW" firstAttribute="centerX" secondItem="KfQ-TH-2Vt" secondAttribute="centerX" id="0xS-K6-np8"/>
+                            <constraint firstItem="iLy-70-LOi" firstAttribute="centerX" secondItem="KfQ-TH-2Vt" secondAttribute="centerX" id="2cv-CK-mPV"/>
                             <constraint firstItem="ag8-uI-NzM" firstAttribute="centerX" secondItem="KfQ-TH-2Vt" secondAttribute="centerX" id="Cze-Nj-ieT"/>
                             <constraint firstItem="ag8-uI-NzM" firstAttribute="top" secondItem="j6U-Lk-q2b" secondAttribute="bottom" constant="8" id="jFU-lY-ebW"/>
+                            <constraint firstItem="iLy-70-LOi" firstAttribute="top" secondItem="ag8-uI-NzM" secondAttribute="bottom" constant="33" id="mKb-18-aKg"/>
+                            <constraint firstItem="2vS-84-daW" firstAttribute="top" secondItem="iLy-70-LOi" secondAttribute="bottom" constant="67" id="sKA-Ig-N5o"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fechaEnamoramiento" destination="iLy-70-LOi" id="pHd-xz-Cm1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ym-cc-kzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3mN-SH-4LM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1003" y="595"/>
+            <point key="canvasLocation" x="1262" y="601"/>
         </scene>
     </scenes>
 </document>
