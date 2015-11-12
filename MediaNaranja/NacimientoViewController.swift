@@ -12,20 +12,12 @@ class NacimientoViewController: UIViewController {
     
     @IBOutlet weak var nacimientoDatePicker: UIDatePicker!
     
-    var fechaNacimiento : String = ""
+    var fechaNacimiento = NSDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if fechaNacimiento != "" {
-          let df = NSDateFormatter()
-            df.dateFormat = "dd MMMM yyyy"
-            df.locale = NSLocale(localeIdentifier: "es-ES")
-            let date = df.dateFromString(self.fechaNacimiento)
-            if let unwrappedDate = date {
-                nacimientoDatePicker.setDate(unwrappedDate, animated: true)
-            }
-        }
+        nacimientoDatePicker.setDate(fechaNacimiento, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,12 +27,10 @@ class NacimientoViewController: UIViewController {
     
     
     @IBAction func fechaCambiada(sender: UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy"
-        dateFormatter.locale = NSLocale(localeIdentifier: "es-ES")
-        let strDate = dateFormatter.stringFromDate(sender.date)
-        self.fechaNacimiento = strDate
-
+        if !esValida(sender.date){
+            print("Fecha no válida!")
+        }
+        self.fechaNacimiento = sender.date
     }
 
     /*
@@ -52,5 +42,13 @@ class NacimientoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func esValida(fecha: NSDate) -> Bool {
+        let hoy = NSDate()
+        if fecha.laterDate(hoy) == fecha {
+            return false
+        }
+        return true
+    }
 
 }

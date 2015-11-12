@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var fechaNacimiento: UILabel!
     @IBOutlet weak var fechaEnamoramiento: UILabel!
     
+    var calNacimiento = NSDate()
+    var calEnamoramiento = NSDate()
+    
+    let EDAD_PROHIBIDA = 15
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +35,11 @@ class ViewController: UIViewController {
             switch identifier {
             case "Seleccionar Nacimiento":
                 if let vc = segue.destinationViewController as? NacimientoViewController {
-                    vc.fechaNacimiento = fechaNacimiento.text!
+                    vc.fechaNacimiento = calNacimiento
                 }
             case "Seleccionar Enamoramiento":
                 if let vc = segue.destinationViewController as? EnamoramientoViewController {
-                    vc.fechaEnamoramiento = fechaNacimiento.text!
+                    vc.fechaEnamoramiento = calEnamoramiento
                 }
             default:
                 break
@@ -47,7 +52,9 @@ class ViewController: UIViewController {
     @IBAction func nacimientoSeleccionado(segue: UIStoryboardSegue) {
         
         if let vc = segue.sourceViewController as? NacimientoViewController {
-            fechaNacimiento.text = String(vc.fechaNacimiento)
+            calNacimiento = vc.fechaNacimiento
+            fechaNacimiento.text = parseDate(calNacimiento)
+            validarFechas()
         }
     }
     
@@ -56,8 +63,33 @@ class ViewController: UIViewController {
     @IBAction func enamoramientoSeleccionado(segue: UIStoryboardSegue) {
         
         if let vc = segue.sourceViewController as? EnamoramientoViewController {
-            fechaEnamoramiento.text = String(vc.fechaEnamoramiento)
+            calEnamoramiento = vc.fechaEnamoramiento
+            fechaEnamoramiento.text = parseDate(calEnamoramiento)
+            validarFechas()
         }
+    }
+    
+    // Funciones auxiliares
+    
+    func validarFechas() {
+        if fechaNacimiento.text != "" && fechaEnamoramiento.text != ""{
+            if calNacimiento.earlierDate(calEnamoramiento)==calEnamoramiento{
+                print("Pero cómo te vas a haber enamorado a esa edad... si no has nacido!")
+                return
+            }
+            if Int(calEnamoramiento.timeIntervalSinceDate(calNacimiento)) <= EDAD_PROHIBIDA*24*3600*365 {
+                print("Eres demasiado joven para enamorarte...")
+                return
+            }
+        }
+    }
+    
+    func parseDate(date: NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        dateFormatter.locale = NSLocale(localeIdentifier: "es-ES")
+        return dateFormatter.stringFromDate(date)
+        
     }
 
 

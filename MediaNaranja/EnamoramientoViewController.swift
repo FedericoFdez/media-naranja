@@ -10,21 +10,14 @@ import UIKit
 
 class EnamoramientoViewController: UIViewController {
 
-    var fechaEnamoramiento : String = ""
     @IBOutlet weak var enamoramientoDatePicker: UIDatePicker!
+    
+    var fechaEnamoramiento = NSDate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if fechaEnamoramiento != "" {
-            let df = NSDateFormatter()
-            df.dateFormat = "dd MMMM yyyy"
-            df.locale = NSLocale(localeIdentifier: "es-ES")
-            let date = df.dateFromString(self.fechaEnamoramiento)
-            if let unwrappedDate = date {
-                enamoramientoDatePicker.setDate(unwrappedDate, animated: true)
-            }
-        }
+        
+        enamoramientoDatePicker.setDate(fechaEnamoramiento, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,11 +26,10 @@ class EnamoramientoViewController: UIViewController {
     }
     
     @IBAction func fechaCambiada(sender: UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy"
-        dateFormatter.locale = NSLocale(localeIdentifier: "es-ES")
-        let strDate = dateFormatter.stringFromDate(sender.date)
-        self.fechaEnamoramiento = strDate
+        if !esValida(sender.date){
+            print("Fecha no válida!")
+        }
+        self.fechaEnamoramiento = sender.date
 
     }
 
@@ -50,5 +42,13 @@ class EnamoramientoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func esValida(fecha: NSDate) -> Bool {
+        let hoy = NSDate()
+        if fecha.laterDate(hoy) == fecha {
+            return false
+        }
+        return true
+    }
 
 }
