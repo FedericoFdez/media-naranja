@@ -48,7 +48,7 @@ class EnamoramientoViewController: UIViewController {
         if fecha.laterDate(hoy) == fecha {
             // Crear un UIAlertController:
             let alert = UIAlertController(title: "Fecha no válida",
-                message: "¿Te has enamorado después de hoy? Yo también quiero tu bola de cristal.",
+                message: "¿Te has enamorado después de hoy? Deberías compartir tu bola de cristal.",
                 preferredStyle: UIAlertControllerStyle.Alert)
             // Añadir una Action al Alert Controller:
             alert.addAction(

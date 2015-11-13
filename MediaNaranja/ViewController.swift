@@ -82,7 +82,7 @@ class ViewController: UIViewController {
             if calNacimiento.earlierDate(calEnamoramiento)==calEnamoramiento{ //nacimiento>enamoramiento
                 // Crear un UIAlertController:
                 let alert1 = UIAlertController(title: "La has liado",
-                    message: "Pero, ¿cómo te vas a haber enamorado a esa edad... si no habías nacido!",
+                    message: "Pero, ¿cómo te vas a haber enamorado a esa edad... ¡si no habías nacido!",
                     preferredStyle: UIAlertControllerStyle.Alert)
                 // Añadir una Action al Alert Controller:
                 alert1.addAction(
@@ -97,8 +97,8 @@ class ViewController: UIViewController {
             }
             if Int(calEnamoramiento.timeIntervalSinceDate(calNacimiento)) <= EDAD_PROHIBIDA*24*3600*365 { //enamoramiento<15 años
                 // Crear un UIAlertController:
-                let alert2 = UIAlertController(title: "La has liado",
-                    message: "Eres demasiado joven para enamorarte...",
+                let alert2 = UIAlertController(title: "¡Demasiado joven para enamorarte! ",
+                    message: "Dicen que antes de los 15 no puedes conocer al amor de tu vida. Pero claro, siempre hay excepciones...",
                     preferredStyle: UIAlertControllerStyle.Alert)
                 
                 // Añadir una Action al Alert Controller:
@@ -136,7 +136,7 @@ class ViewController: UIViewController {
     
     func parseDate(date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy"
+        dateFormatter.dateFormat = "dd 'de' MMMM 'de' yyyy"
         dateFormatter.locale = NSLocale(localeIdentifier: "es-ES")
         return dateFormatter.stringFromDate(date)
         
