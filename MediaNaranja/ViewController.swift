@@ -19,10 +19,17 @@ class ViewController: UIViewController {
     
     let EDAD_PROHIBIDA = 15
     
+    var vistaGorda = false // hacer una excepción en la validación
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        validarFechas()
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +62,6 @@ class ViewController: UIViewController {
         if let vc = segue.sourceViewController as? NacimientoViewController {
             calNacimiento = vc.fechaNacimiento
             fechaNacimiento.text = parseDate(calNacimiento)
-            calcularMuerte()
         }
     }
     
@@ -66,7 +72,6 @@ class ViewController: UIViewController {
         if let vc = segue.sourceViewController as? EnamoramientoViewController {
             calEnamoramiento = vc.fechaEnamoramiento
             fechaEnamoramiento.text = parseDate(calEnamoramiento)
-            calcularMuerte()
         }
     }
     
@@ -74,19 +79,52 @@ class ViewController: UIViewController {
     
     func validarFechas() {
         if fechaNacimiento.text != "" && fechaEnamoramiento.text != ""{
-            if calNacimiento.earlierDate(calEnamoramiento)==calEnamoramiento{
-                print("Pero cómo te vas a haber enamorado a esa edad... si no has nacido!")
+            if calNacimiento.earlierDate(calEnamoramiento)==calEnamoramiento{ //nacimiento>enamoramiento
+                // Crear un UIAlertController:
+                let alert1 = UIAlertController(title: "La has liado",
+                    message: "Pero, ¿cómo te vas a haber enamorado a esa edad... si no habías nacido!",
+                    preferredStyle: UIAlertControllerStyle.Alert)
+                // Añadir una Action al Alert Controller:
+                alert1.addAction(
+                    UIAlertAction(title: "Quiero ser sincero",
+                        style: UIAlertActionStyle.Default,
+                        handler: {(alert :UIAlertAction!) in
+                            self.fechaEnamoramiento.text = ""
+                    }))
+                // Presentar el Alert Controller:
+                presentViewController(alert1, animated: true, completion: nil)
                 return
             }
-            if Int(calEnamoramiento.timeIntervalSinceDate(calNacimiento)) <= EDAD_PROHIBIDA*24*3600*365 {
-                print("Eres demasiado joven para enamorarte...")
-                return
+            if Int(calEnamoramiento.timeIntervalSinceDate(calNacimiento)) <= EDAD_PROHIBIDA*24*3600*365 { //enamoramiento<15 años
+                // Crear un UIAlertController:
+                let alert2 = UIAlertController(title: "La has liado",
+                    message: "Eres demasiado joven para enamorarte...",
+                    preferredStyle: UIAlertControllerStyle.Alert)
+                
+                // Añadir una Action al Alert Controller:
+                alert2.addAction(
+                    UIAlertAction(title: "Me has pillado",
+                        style: UIAlertActionStyle.Default,
+                        handler: {(alert :UIAlertAction!) in
+                            self.fechaEnamoramiento.text = ""
+                            self.fechaMuerte.text=""
+                    }))
+                
+                // Añadir una Action al Alert Controller:
+                alert2.addAction(
+                    UIAlertAction(title: "Fue un flechazo",
+                        style: UIAlertActionStyle.Default,
+                        handler: {(alert :UIAlertAction!) in
+                            self.escribirMuerte()
+                    }))
+                // Presentar el Alert Controller:
+                presentViewController(alert2, animated: true, completion: nil)
             }
+            self.escribirMuerte()
         }
     }
     
-    func calcularMuerte() {
-        validarFechas()
+    func escribirMuerte() {
         let calendario = NSCalendar.currentCalendar()
         let calMuerte = calendario.dateByAddingUnit(
             [.Second],

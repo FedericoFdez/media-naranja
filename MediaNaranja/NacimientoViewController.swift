@@ -46,6 +46,20 @@ class NacimientoViewController: UIViewController {
     func esValida(fecha: NSDate) -> Bool {
         let hoy = NSDate()
         if fecha.laterDate(hoy) == fecha {
+            // Crear un UIAlertController:
+            let alert = UIAlertController(title: "Fecha no válida",
+                message: "Pero, ¿cómo vas a haber nacido después de hoy? ¿Vienes del futuro?",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            // Añadir una Action al Alert Controller:
+            alert.addAction(
+                UIAlertAction(title: "Venga, lo cambio",
+                    style: UIAlertActionStyle.Default,
+                    handler: {(alert :UIAlertAction!) in
+                        self.nacimientoDatePicker.setDate(NSDate(), animated: true)
+                        self.fechaNacimiento = self.nacimientoDatePicker.date
+                }))
+            // Presentar el Alert Controller:
+            presentViewController(alert, animated: true, completion: nil)
             return false
         }
         return true

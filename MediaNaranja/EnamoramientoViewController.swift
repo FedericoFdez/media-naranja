@@ -46,6 +46,21 @@ class EnamoramientoViewController: UIViewController {
     func esValida(fecha: NSDate) -> Bool {
         let hoy = NSDate()
         if fecha.laterDate(hoy) == fecha {
+            // Crear un UIAlertController:
+            let alert = UIAlertController(title: "Fecha no válida",
+                message: "¿Te has enamorado después de hoy? Yo también quiero tu bola de cristal.",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            // Añadir una Action al Alert Controller:
+            alert.addAction(
+                UIAlertAction(title: "No tengo bola de cristal",
+                    style: UIAlertActionStyle.Default,
+                    handler: {(alert :UIAlertAction!) in
+                        self.enamoramientoDatePicker.setDate(NSDate(), animated: true)
+                        self.fechaEnamoramiento = self.enamoramientoDatePicker.date
+                        
+                }))
+            // Presentar el Alert Controller:
+            presentViewController(alert, animated: true, completion: nil)
             return false
         }
         return true
