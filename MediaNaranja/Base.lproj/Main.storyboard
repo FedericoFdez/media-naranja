@@ -16,10 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Naranjas" translatesAutoresizingMaskIntoConstraints="NO" id="LU8-pc-2oE">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <animations/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rV-ha-kDJ">
                                 <rect key="frame" x="154" y="28" width="293" height="21"/>
                                 <animations/>
@@ -76,6 +72,36 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Naranjas" translatesAutoresizingMaskIntoConstraints="NO" id="Cwr-7Q-HuW">
+                                <rect key="frame" x="126" y="404" width="348" height="176"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="176" id="afC-Nc-tic"/>
+                                    <constraint firstAttribute="width" constant="348" id="gcc-eJ-h3l"/>
+                                    <constraint firstAttribute="width" constant="646" id="m0O-0I-wVy"/>
+                                    <constraint firstAttribute="height" constant="357" id="xVi-3M-RSj"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="afC-Nc-tic"/>
+                                        <exclude reference="gcc-eJ-h3l"/>
+                                        <exclude reference="m0O-0I-wVy"/>
+                                        <exclude reference="xVi-3M-RSj"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="afC-Nc-tic"/>
+                                        <include reference="gcc-eJ-h3l"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="m0O-0I-wVy"/>
+                                        <include reference="xVi-3M-RSj"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -83,7 +109,7 @@
                             <constraint firstItem="1rV-ha-kDJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1En-eh-nRX"/>
                             <constraint firstItem="OBD-vN-XJU" firstAttribute="leading" secondItem="vc3-aG-jJY" secondAttribute="trailing" constant="100" id="4Bz-Nj-Vv3"/>
                             <constraint firstItem="1rV-ha-kDJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="5nN-cR-BQ1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LU8-pc-2oE" secondAttribute="bottom" constant="40" id="Dvu-px-HcH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cwr-7Q-HuW" secondAttribute="bottom" constant="20" id="68z-81-5Q5"/>
                             <constraint firstItem="dQS-SM-zqj" firstAttribute="top" secondItem="jlm-eP-HmV" secondAttribute="bottom" constant="8" id="Fp9-6g-SGj"/>
                             <constraint firstItem="OBD-vN-XJU" firstAttribute="leading" secondItem="B6Q-uA-ldI" secondAttribute="trailing" constant="10" id="IMn-8Q-zQu">
                                 <variation key="heightClass=compact" constant="100"/>
@@ -91,33 +117,33 @@
                             <constraint firstItem="B6Q-uA-ldI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JLh-jT-0FU">
                                 <variation key="heightClass=compact" constant="-144"/>
                             </constraint>
+                            <constraint firstItem="Cwr-7Q-HuW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SS5-UD-Ewt"/>
                             <constraint firstItem="dQS-SM-zqj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Txi-os-nzf">
                                 <variation key="heightClass=compact" constant="-143"/>
                             </constraint>
                             <constraint firstItem="B6Q-uA-ldI" firstAttribute="top" secondItem="jlm-eP-HmV" secondAttribute="bottom" constant="62" id="UeE-LL-qzk"/>
                             <constraint firstItem="OBD-vN-XJU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="Yka-WO-3ip"/>
-                            <constraint firstItem="LU8-pc-2oE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dT7-cE-dlD"/>
-                            <constraint firstItem="OBD-vN-XJU" firstAttribute="top" secondItem="vc3-aG-jJY" secondAttribute="bottom" constant="103" id="nnB-lD-gd9"/>
+                            <constraint firstItem="OBD-vN-XJU" firstAttribute="top" secondItem="vc3-aG-jJY" secondAttribute="bottom" constant="80" id="nnB-lD-gd9"/>
+                            <constraint firstItem="Cwr-7Q-HuW" firstAttribute="top" secondItem="B6Q-uA-ldI" secondAttribute="bottom" constant="150" id="pGw-Q3-6aN"/>
                             <constraint firstItem="vc3-aG-jJY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ptv-hM-CEI">
                                 <variation key="heightClass=compact" constant="-143"/>
                             </constraint>
                             <constraint firstItem="jlm-eP-HmV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tgu-aD-RLZ">
                                 <variation key="heightClass=compact" constant="-144"/>
                             </constraint>
-                            <constraint firstItem="jlm-eP-HmV" firstAttribute="top" secondItem="1rV-ha-kDJ" secondAttribute="bottom" constant="72" id="wIs-O7-c2L"/>
+                            <constraint firstItem="jlm-eP-HmV" firstAttribute="top" secondItem="1rV-ha-kDJ" secondAttribute="bottom" constant="50" id="wIs-O7-c2L"/>
                             <constraint firstItem="vc3-aG-jJY" firstAttribute="top" secondItem="B6Q-uA-ldI" secondAttribute="bottom" constant="8" id="yIM-a7-r49"/>
                             <constraint firstItem="OBD-vN-XJU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z0V-nr-Itd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="LU8-pc-2oE"/>
+                                <exclude reference="Cwr-7Q-HuW"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="dT7-cE-dlD"/>
                                 <exclude reference="4Bz-Nj-Vv3"/>
                                 <exclude reference="IMn-8Q-zQu"/>
                                 <exclude reference="Yka-WO-3ip"/>
-                                <exclude reference="Dvu-px-HcH"/>
+                                <exclude reference="pGw-Q3-6aN"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -129,13 +155,18 @@
                                 <exclude reference="z0V-nr-Itd"/>
                             </mask>
                         </variation>
-                        <variation key="heightClass=regular-widthClass=regular">
+                        <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="LU8-pc-2oE"/>
+                                <include reference="Cwr-7Q-HuW"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="dT7-cE-dlD"/>
-                                <include reference="Dvu-px-HcH"/>
+                                <include reference="pGw-Q3-6aN"/>
+                                <exclude reference="68z-81-5Q5"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="Cwr-7Q-HuW"/>
                             </mask>
                         </variation>
                     </view>
@@ -147,6 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="186" y="177"/>
         </scene>
         <!--Nacimiento View Controller-->
         <scene sceneID="CIw-2Q-fHW">
@@ -286,6 +318,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Naranjas" width="533" height="296"/>
+        <image name="Naranjas" width="1600" height="889"/>
     </resources>
 </document>
