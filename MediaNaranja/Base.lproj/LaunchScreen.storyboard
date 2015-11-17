@@ -16,25 +16,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YW8-xB-nVs">
-                                <rect key="frame" x="133" y="178" width="335" height="20"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" misplaced="YES" image="Corazón" translatesAutoresizingMaskIntoConstraints="NO" id="l5M-nd-AdX">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YW8-xB-nVs">
+                                <rect key="frame" x="160" y="111" width="281" height="58"/>
                                 <animations/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Práctica 4 IWEB: Mi media naranja me mata">
+                                    <fragment content="Práctica 4 IWEB">
                                         <attributes>
                                             <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <font key="NSFont" size="24" name="TrebuchetMS-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="  Mi media naranja me mata">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="24" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rodrigo Barbado Esteban Federico A. Fernández Moreno" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GW-br-wU2">
+                                <rect key="frame" x="182" y="504" width="236" height="41"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YW8-xB-nVs" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="158" id="GUX-PK-hLN"/>
+                            <constraint firstItem="l5M-nd-AdX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3dx-Rs-YwS"/>
+                            <constraint firstItem="l5M-nd-AdX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4Tc-YL-Q1K"/>
+                            <constraint firstItem="YW8-xB-nVs" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="91" id="GUX-PK-hLN"/>
+                            <constraint firstItem="4GW-br-wU2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bpZ-Dj-jGJ"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="4GW-br-wU2" secondAttribute="bottom" constant="55" id="l4F-OU-ktP"/>
                             <constraint firstItem="YW8-xB-nVs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yJ0-VC-C5M"/>
                         </constraints>
                     </view>
@@ -44,4 +66,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Corazón" width="425" height="398"/>
+    </resources>
 </document>
