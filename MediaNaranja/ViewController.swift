@@ -131,7 +131,7 @@ class ViewController: UIViewController {
             value: Int(calEnamoramiento.timeIntervalSinceDate(calNacimiento)),
             toDate: calEnamoramiento,
             options: [])!
-        fechaMuerte.text = "Mueres el día... "+parseDate(calMuerte)
+        fechaMuerte.text = "Mueres el día...\n"+parseDate(calMuerte)
     }
     
     func parseDate(date: NSDate) -> String {
